@@ -85,7 +85,7 @@ def getMesa(id):
 @app.route("/mesa/<string:id>", methods=['PUT'])
 def modificarMesa(id):
     data = request.get_json()
-    json = controladorMesa.updateMesa(id)
+    json = controladorMesa.updateMesa(id, data)
     return jsonify(json)
 
 
