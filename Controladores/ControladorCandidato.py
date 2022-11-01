@@ -14,11 +14,9 @@ class ControladorCandidato():
         return self.repositorioCandidato.save(nuevoCandidato)
 
     def showidCandidato(self, id):
-        print("Mostrando el candidato con su ID ", id)
         return self.repositorioCandidato.findById(id)
 
     def showallCandidato(self):
-        print("Mostrando los candidatos de la base de datos ")
         return self.repositorioCandidato.findAll()
 
     def updateCandidato(self, id, infoCandidato):
@@ -28,13 +26,10 @@ class ControladorCandidato():
         candidatoactual.numero_resolucion = infoCandidato["numero_resolucion"]
         candidatoactual.nombre = infoCandidato["nombre"]
         candidatoactual.apellido = infoCandidato["apellido"]
-        self.repositorioCandidato.save(candidatoactual)
-        return True
+        return self.repositorioCandidato.save(candidatoactual)
 
     def deleteCandidato(self, id):
-        print("Eliminando el Candidato con ID ", id)
-        self.repositorioCandidato.delete(id)
-        return True
+        return self.repositorioCandidato.delete(id)
 
     def asigPartido(self,idC, idP):
         candidatoactual = ModeloCandidato(self.repositorioCandidato.findById(idC))
