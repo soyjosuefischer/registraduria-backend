@@ -33,5 +33,4 @@ class ControladorCandidato():
         candidatoactual = ModeloCandidato(self.repositorioCandidato.findById(idC))
         partidoactual = ModeloPartido(self.repositorioPartido.findById(idP))
         candidatoactual.partido = partidoactual
-        self.repositorioCandidato.save(candidatoactual)
-        return True
+        return self.repositorioCandidato.save(candidatoactual)
