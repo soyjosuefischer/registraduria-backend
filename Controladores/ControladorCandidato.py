@@ -10,21 +10,16 @@ class ControladorCandidato():
         self.repositorioPartido = RepositorioPartido()
 
     def createCandidato(self, infoCandidato):
-        print("Creando el candidato...")
-        nuevocandidato = ModeloCandidato(infoCandidato)
-        print("Candidato a crear en la base de datos: ", nuevocandidato.__dict__)
-        self.repositorioCandidato.save(nuevocandidato)
-        return True
+        nuevoCandidato = ModeloCandidato(infoCandidato)
+        return self.repositorioCandidato.save(nuevoCandidato)
 
     def showidCandidato(self, id):
         print("Mostrando el candidato con su ID ", id)
-        candidato = ModeloCandidato(self.repositorioCandidato.findById(id))
-        return candidato.__dict__
+        return self.repositorioCandidato.findById(id)
 
     def showallCandidato(self):
         print("Mostrando los candidatos de la base de datos ")
-        candidatos = ModeloCandidato(self.repositorioCandidato.findAll())
-        return candidatos.__dict__
+        return self.repositorioCandidato.findAll()
 
     def updateCandidato(self, id, infoCandidato):
         candidatoactual = ModeloCandidato(self.repositorioCandidato.findById(id))
