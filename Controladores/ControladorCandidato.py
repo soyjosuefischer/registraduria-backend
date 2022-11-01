@@ -5,7 +5,6 @@ from Repositorio.RepositorioPartido import RepositorioPartido
 
 class ControladorCandidato():
     def __init__(self):
-        print("Creando el controlador de Candidato")
         self.repositorioCandidato = RepositorioCandidato()
         self.repositorioPartido = RepositorioPartido()
 
@@ -21,7 +20,6 @@ class ControladorCandidato():
 
     def updateCandidato(self, id, infoCandidato):
         candidatoactual = ModeloCandidato(self.repositorioCandidato.findById(id))
-        print("Actualizando el Candidato con ID ", candidatoactual)
         candidatoactual.cedula = infoCandidato["cedula"]
         candidatoactual.numero_resolucion = infoCandidato["numero_resolucion"]
         candidatoactual.nombre = infoCandidato["nombre"]
@@ -35,6 +33,5 @@ class ControladorCandidato():
         candidatoactual = ModeloCandidato(self.repositorioCandidato.findById(idC))
         partidoactual = ModeloPartido(self.repositorioPartido.findById(idP))
         candidatoactual.partido = partidoactual
-        print("Candidato a asignar a un partido: ", candidatoactual.__dict__)
         self.repositorioCandidato.save(candidatoactual)
         return True
