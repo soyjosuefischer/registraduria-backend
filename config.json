@@ -1,0 +1,7 @@
+{
+ "url-backend": "127.0.0.1",
+ "port": 9999,
+
+ "data-db-connection": "",
+ "name-db": ""
+}
