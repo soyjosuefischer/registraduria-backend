@@ -117,7 +117,7 @@ def getPartido(id):
 @app.route("/partido/<string:id>", methods=['PUT'])
 def modificarPartido(id):
     data = request.get_json()
-    json = controladorPartido.updatePartido(id)
+    json = controladorPartido.updatePartido(id, data)
     return jsonify(json)
 
 
