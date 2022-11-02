@@ -1,5 +1,6 @@
-from Modelos.modeloPartido import modeloPartido
+from Modelos.modeloPartido import ModeloPartido
 from Repositorio.InterfaceRepositorio import InterfaceRepositorio
 
-class RepositorioPartido(InterfaceRepositorio[modeloPartido]):
+
+class RepositorioPartido(InterfaceRepositorio[ModeloPartido]):
     pass

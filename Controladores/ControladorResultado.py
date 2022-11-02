@@ -8,7 +8,6 @@ from bson import ObjectId
 
 class ControladorResultado():
     def __init__(self):
-        print("Creando el controlador de Resultado")
         self.repositorioResultado =RepositorioResultado()
         self.repositorioCandidato = RepositorioCandidato()
         self.repositorioMesa = RepositorioMesa()
@@ -22,12 +21,10 @@ class ControladorResultado():
         return self.repositorioResultado.save(elresultado)
 
     def showidResultado(self, id):
-        print("Mostrando un resultado con su ID ", id)
         resultado = ModeloResultado(self.repositorioResultado.findById(id))
         return resultado.__dict__
 
     def showallResultado(self):
-        print("Mostrando todos los resultado de la base de datos ")
         return self.repositorioResultado.findAll()
 
     def updateResultado(self, infoResultado,idM,idC):
@@ -40,7 +37,6 @@ class ControladorResultado():
         return self.repositorioResultado.save(resultadoactual)
 
     def deleteResultado(self, id):
-        print("Eliminando Resultado con su ID ", id)
         self.repositorioResultado.delete(id)
         return True
 
