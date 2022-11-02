@@ -140,6 +140,9 @@ Para correr este proyecto localmente debes seguir los siguientes pasos:
 
 ### 3. Instalar los paquetes del proyecto
     $ pip install -r requirements.txt
+   
+### 4. Correr el servidor
+    $ flask --app main run
 
 ## Repositorios de este proyecto
 
