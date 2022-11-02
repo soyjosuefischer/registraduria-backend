@@ -22,10 +22,10 @@
 
 La REGISTRADURÍA NACIONAL DE COLOMBIA es una entidad con autonomía administrativa, contractual y presupuestal, organizada de manera desconcentrada, que tiene a su cargo el registro de la vida civil e identificación de los colombianos y la realización de los procesos electorales y los mecanismos de participación ciudadana, con plenas garantías para los colombianos.
 
-## Información sobre el programa
+## Información sobre el software
 
 <details>
-<summary><b>Toca para ver/ocultar la información general del software</b></summary>
+<summary><b>Ver/ocultar la información general del software</b></summary>
 
 <br>
 
@@ -60,7 +60,7 @@ Para ello, se han realizado reuniones para formalizar los requisitos, obteniendo
 </details>
 
 <details>
-<summary><b>Toca para ver/ocultar la información sobre los casos de uso del proyecto</b></summary>
+<summary><b>Ver/ocultar la información sobre los casos de uso del proyecto</b></summary>
 
 <br>
 
@@ -80,7 +80,7 @@ Por recomendaciones generales de expertos en plataformas de gestión de votacion
 <br>
 
 <details>
-<summary><b>Toca para ver/ocultar la información sobre la arquitectura del software</b></summary>
+<summary><b>Ver/ocultar la información sobre la arquitectura del software</b></summary>
 
 <br>
 
@@ -110,6 +110,18 @@ Para la implementación del sitio web (Cliente o Front-end) se deben de tener en
 **D.**	Según se el rol correspondiente, se debe poder visualizar cada uno de las vistas para la manipulación de todos los casos de uso descritos anteriormente.
 
 </details>
+
+## Diagramas de la Base de Datos del software
+
+A continuación se presentan los diagramas correspondientes a la base de datos del back-end de los resultados y del back-end de la seguridad.
+
+- ### Diagrama Base de Datos Back-end de Resultados (Python - Flask)
+
+    ![Diagrama Arquitéctonico](./assets/DiagramaResultados.png)
+
+- ### Diagrama Base de Datos Back-end de Seguridad (Java - Spring Boot)
+
+    ![Diagrama Arquitéctonico](./assets/DiagramaSeguridad.png)
 
 ## Requisitos técnicos
 
