@@ -1,7 +1,6 @@
 <div align="center">
 
 ![GitHub repo stars](https://img.shields.io/github/stars/iamjosuefischer/registraduria-backend?color=00BAFF)
-![GitHub repo size](https://img.shields.io/github/repo-size/iamjosuefischer/registraduria-backend?color=00BAFF)
 ![GitHub repo license](https://img.shields.io/github/license/iamjosuefischer/registraduria-backend?color=00BAFF)
 ![GitHub repo size](https://img.shields.io/github/repo-size/iamjosuefischer/registraduria-backend?color=00BAFF)
 ![GitHub last commit](https://img.shields.io/github/last-commit/iamjosuefischer/registraduria-backend?)

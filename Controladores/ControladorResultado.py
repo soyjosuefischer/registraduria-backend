@@ -8,7 +8,7 @@ from bson import ObjectId
 
 class ControladorResultado():
     def __init__(self):
-        self.repositorioResultado =RepositorioResultado()
+        self.repositorioResultado = RepositorioResultado()
         self.repositorioCandidato = RepositorioCandidato()
         self.repositorioMesa = RepositorioMesa()
 

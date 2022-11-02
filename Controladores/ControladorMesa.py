@@ -1,7 +1,6 @@
 from Modelos.modeloMesa import ModeloMesa
 from Repositorio.RepositorioMesa import RepositorioMesa
 
-
 class ControladorMesa():
     def __init__(self):
         self.repositorioMesa = RepositorioMesa()
