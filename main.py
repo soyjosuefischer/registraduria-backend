@@ -9,11 +9,13 @@ from Controladores.ControladorCandidato import ControladorCandidato
 from Controladores.ControladorMesa import ControladorMesa
 from Controladores.ControladorPartido import ControladorPartido
 from Controladores.ControladorResultado import ControladorResultado
+from Controladores.ControladorResultadoPartido import ControladorResultadoPartido
 
 controladorCandidato = ControladorCandidato()
 controladorMesa = ControladorMesa()
 controladorPartido = ControladorPartido()
 controladorResultado = ControladorResultado()
+controladorResultadoPartido = ControladorResultadoPartido()
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -132,22 +134,26 @@ def getResultado():
     json = controladorResultado.showallResultado()
     return jsonify(json)
 
+
 @app.route("/resultado/<string:id>", methods=['GET'])
 def getResultadoid(id):
     json = controladorResultado.showidResultado(id)
     return jsonify(json)
 
+
 @app.route("/resultado/mesa/<string:idMesa>/candidatos/<string:idCandidatos>", methods=['POST'])
 def crearResultadoMesaCandidato(idMesa, idCandidatos):
     data = request.get_json()
-    json = controladorResultado.createResultado(data, idMesa, idCandidatos)
+    json = controladorResultado.createResultado(idMesa, idCandidatos, data)
     return jsonify(json)
+
 
 @app.route("/resultado/<string:idR>/mesa/<string:idM>/candidatos/<string:idC>", methods=['PUT'])
 def modificarResultados(idR, idM, idC):
     data = request.get_json()
-    json = controladorResultado.updateResultado(idR, data, idM, idC)
+    json = controladorResultado.updateResultado(idR, idM, idC, data)
     return jsonify(json)
+
 
 @app.route("/resultado/<string:id>", methods=['DELETE'])
 def eliminarResultado(id):
@@ -157,7 +163,45 @@ def eliminarResultado(id):
 
 @app.route("/resultado/candidato/<string:idC>", methods=['GET'])
 def inscritosEnCandidatos(idC):
-    json = ControladorResultado.listarresultadoscandidato(idC)
+    json = controladorResultado.listarresultadoscandidato(idC)
+    return jsonify(json)
+
+
+@app.route("/resultadopartido", methods=['GET'])
+def getResultado():
+    json = controladorResultadoPartido.showallResultado()
+    return jsonify(json)
+
+
+@app.route("/resultadopartido/<string:id>", methods=['GET'])
+def getResultadoid(id):
+    json = controladorResultadoPartido.showidResultado(id)
+    return jsonify(json)
+
+
+@app.route("/resultadopartido/mesa/<string:idMesa>/partido/<string:idPartido>", methods=['POST'])
+def crearResultadoMesaPartido(idMesa, idPartido):
+    data = request.get_json()
+    json = controladorResultadoPartido.createResultado(idMesa, idPartido, data)
+    return jsonify(json)
+
+
+@app.route("/resultadopartido/<string:idR>/mesa/<string:idM>/partido/<string:idP>", methods=['PUT'])
+def modificarResultados(idR, idM, idP):
+    data = request.get_json()
+    json = controladorResultadoPartido.updateResultado(idR, idM, idP, data)
+    return jsonify(json)
+
+
+@app.route("/resultadopartido/<string:id>", methods=['DELETE'])
+def eliminarResultado(id):
+    json = controladorResultadoPartido.deleteResultado(id)
+    return jsonify(json)
+
+
+@app.route("/resultadopartido/partido/<string:id>", methods=['GET'])
+def inscritosEnCandidatos(id):
+    json = controladorResultadoPartido.listarresultadospartido(id)
     return jsonify(json)
 
 
@@ -169,6 +213,6 @@ def loadFileConfig():
 
 if __name__ == '__main__':
     dataConfig = loadFileConfig()
-    print("Server running : "+"http://" +
-          dataConfig["url-backend"]+":"+str(dataConfig["port"]))
+    print("Servidor corriendo : " + "http://" +
+          dataConfig["url-backend"] + ":" + str(dataConfig["port"]))
     serve(app, host=dataConfig["url-backend"], port=dataConfig["port"])
