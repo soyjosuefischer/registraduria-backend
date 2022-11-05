@@ -144,7 +144,7 @@ def getResultadoid(id):
 @app.route("/resultado/mesa/<string:idMesa>/candidatos/<string:idCandidatos>", methods=['POST'])
 def crearResultadoMesaCandidato(idMesa, idCandidatos):
     data = request.get_json()
-    json = controladorResultado.createResultado(idMesa, idCandidatos, data)
+    json = controladorResultado.createResultado(data, idMesa, idCandidatos)
     return jsonify(json)
 
 
@@ -168,13 +168,13 @@ def inscritosEnCandidatos(idC):
 
 
 @app.route("/resultadopartido", methods=['GET'])
-def getResultado():
+def getResultadoPartido():
     json = controladorResultadoPartido.showallResultado()
     return jsonify(json)
 
 
 @app.route("/resultadopartido/<string:id>", methods=['GET'])
-def getResultadoid(id):
+def getResultadoPartidoId(id):
     json = controladorResultadoPartido.showidResultado(id)
     return jsonify(json)
 
@@ -182,25 +182,25 @@ def getResultadoid(id):
 @app.route("/resultadopartido/mesa/<string:idMesa>/partido/<string:idPartido>", methods=['POST'])
 def crearResultadoMesaPartido(idMesa, idPartido):
     data = request.get_json()
-    json = controladorResultadoPartido.createResultado(idMesa, idPartido, data)
+    json = controladorResultadoPartido.createResultado(data, idMesa, idPartido)
     return jsonify(json)
 
 
 @app.route("/resultadopartido/<string:idR>/mesa/<string:idM>/partido/<string:idP>", methods=['PUT'])
-def modificarResultados(idR, idM, idP):
+def modificarResultadoPartido(idR, idM, idP):
     data = request.get_json()
     json = controladorResultadoPartido.updateResultado(idR, idM, idP, data)
     return jsonify(json)
 
 
 @app.route("/resultadopartido/<string:id>", methods=['DELETE'])
-def eliminarResultado(id):
+def eliminarResultadoPartido(id):
     json = controladorResultadoPartido.deleteResultado(id)
     return jsonify(json)
 
 
 @app.route("/resultadopartido/partido/<string:id>", methods=['GET'])
-def inscritosEnCandidatos(id):
+def partidosInscritos(id):
     json = controladorResultadoPartido.listarresultadospartido(id)
     return jsonify(json)
 
@@ -213,6 +213,5 @@ def loadFileConfig():
 
 if __name__ == '__main__':
     dataConfig = loadFileConfig()
-    print("Servidor corriendo : " + "http://" +
-          dataConfig["url-backend"] + ":" + str(dataConfig["port"]))
+    print("Servidor Corriendo: " + "http://" + dataConfig["url-backend"] + ":" + str(dataConfig["port"]))
     serve(app, host=dataConfig["url-backend"], port=dataConfig["port"])
