@@ -9,7 +9,8 @@
 ![Python](https://img.shields.io/badge/Python-Language-yellow?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Framework-white?logo=flask)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?logo=mongodb)
-# PROYECTO DE PROGRAMACIÓN WEB 
+
+# BACK-END DEL PROYECTO
 ### VOTACIONES 2022
 
 <br>
@@ -158,7 +159,7 @@ Para correr este proyecto localmente debes seguir los siguientes pasos:
 
 ## Repositorios de este proyecto
 
-En los siguientes repositorios de GitHub se puede encuentrar el back-end, la seguridad y el front-end de este proyecto.
+En los siguientes repositorios de GitHub se puede encuentrar el back-end, el componente de seguridad y el front-end de este proyecto.
 
 ### Back-end
 
@@ -166,7 +167,7 @@ En los siguientes repositorios de GitHub se puede encuentrar el back-end, la seg
 
 ### Seguridad
 
- - <a href="#">Seguridad del proyecto de la registraduría</a>
+ - <a href="https://github.com/iamjosuefischer/registraduria-seguridad">Componente de seguridad del proyecto de la registraduría</a>
 
 ### Front-end
 
