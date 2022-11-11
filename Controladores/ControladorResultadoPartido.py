@@ -6,7 +6,6 @@ from Repositorio.RepositorioMesa import RepositorioMesa
 from Repositorio.RepositorioResultadoPartido import RepositorioResultadoPartido
 from bson import ObjectId
 
-
 class ControladorResultadoPartido():
     def __init__(self):
         self.repositorioResultadoPartido = RepositorioResultadoPartido()
@@ -30,13 +29,12 @@ class ControladorResultadoPartido():
         return self.repositorioResultadoPartido.findAll()
 
     def updateResultado(self, idR, idM, idP, infoResultado):
-        resultadoactual = ModeloResultadoPartido(
-            self.repositorioResultadoPartido.findById(idR))
+        resultadoactual = ModeloResultadoPartido(self.repositorioResultadoPartido.findById(idR))
         lamesa = ModeloMesa(self.repositorioMesa.findById(idM))
         elpartido = ModeloPartido(self.repositorioPartido.findById(idP))
-        resultadoactual.mesa=lamesa
-        resultadoactual.partido=elpartido
-        resultadoactual.numero_votos=infoResultado["numero_votos"]
+        resultadoactual.mesa = lamesa
+        resultadoactual.partido = elpartido
+        resultadoactual.numero_votos = infoResultado["numero_votos"]
         return self.repositorioResultadoPartido.save(resultadoactual)
 
     def deleteResultado(self, id):

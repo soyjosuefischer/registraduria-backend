@@ -169,8 +169,12 @@ En los siguientes repositorios de GitHub se puede encuentrar el back-end, el com
 
  - <a href="https://github.com/iamjosuefischer/registraduria-seguridad">Componente de seguridad del proyecto de la registraduría</a>
 
+### Api Gateway
+
+ - <a href="https://github.com/iamjosuefischer/registraduria-apigateway">Api Gateway del proyecto de la registraduría</a>
+
 ### Front-end
 
- - <a href="#">Front-end del proyecto de la registraduría</a>
+ - <a href="https://github.com/iamjosuefischer/registraduria-frontend">Front-end del proyecto de la registraduría</a>
 
 </div>
