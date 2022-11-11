@@ -159,7 +159,7 @@ Para correr este proyecto localmente debes seguir los siguientes pasos:
 
 ## Repositorios de este proyecto
 
-En los siguientes repositorios de GitHub se puede encuentrar el back-end, el componente de seguridad y el front-end de este proyecto.
+En los siguientes repositorios de GitHub se puede encuentrar el back-end, el componente de seguridad, el Api Gateway y el front-end de este proyecto.
 
 ### Back-end
 
