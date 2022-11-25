@@ -20,10 +20,9 @@ controladorResultadoPartido = ControladorResultadoPartido()
 app = Flask(__name__)
 cors = CORS(app)
 
-@app.route("/", methods = ['GET'])
-def test():
-    json = {"message": "El servidor se está ejecutando..."}
-    return jsonify(json)
+###########################
+# Implementación de rutas #
+###########################
 
 @app.route("/candidatos", methods = ['GET'])
 def getCandidatos():
@@ -100,7 +99,6 @@ def getPartido(id):
     json = controladorPartido.showidPartido(id)
     return jsonify(json)
 
-
 @app.route("/partido/<string:id>", methods = ['PUT'])
 def modificarPartido(id):
     data = request.get_json()
@@ -128,7 +126,6 @@ def crearResultadoMesaCandidato(idMesa, idCandidatos):
     json = controladorResultado.createResultado(data, idMesa, idCandidatos)
     return jsonify(json)
 
-
 @app.route("/resultado/<string:idR>/mesa/<string:idM>/candidatos/<string:idC>", methods = ['PUT'])
 def modificarResultados(idR, idM, idC):
     data = request.get_json()
@@ -145,7 +142,6 @@ def inscritosEnCandidatos(idC):
     json = controladorResultado.listarresultadoscandidato(idC)
     return jsonify(json)
 
-
 @app.route("/resultadopartido", methods = ['GET'])
 def getResultadoPartido():
     json = controladorResultadoPartido.showallResultado()
@@ -161,7 +157,6 @@ def crearResultadoMesaPartido(idMesa, idPartido):
     data = request.get_json()
     json = controladorResultadoPartido.createResultado(data, idMesa, idPartido)
     return jsonify(json)
-
 
 @app.route("/resultadopartido/<string:idR>/mesa/<string:idM>/partido/<string:idP>", methods = ['PUT'])
 def modificarResultadoPartido(idR, idM, idP):
@@ -183,6 +178,19 @@ def loadFileConfig():
     with open('config.json') as f:
         data = json.load(f)
     return data
+
+######################
+# Servidor corriendo #
+######################
+
+@app.route("/", methods = ['GET'])
+def test():
+    json = {"message": "El servidor se está ejecutando..."}
+    return jsonify(json)
+
+#################
+# Configuración #
+#################
 
 if __name__ == '__main__':
     dataConfig = loadFileConfig()
